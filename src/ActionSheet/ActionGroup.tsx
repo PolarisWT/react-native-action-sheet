@@ -10,7 +10,6 @@ import {
   Platform,
   UIManager,
 } from 'react-native';
-import { hook } from 'cavy';
 import TouchableNativeFeedbackSafe from './TouchableNativeFeedbackSafe';
 import { ActionSheetOptions } from '../types';
 
@@ -47,7 +46,7 @@ const focusViewOnRender = (ref: React.Component | null) => {
   }
 };
 
-class ActionGroup extends React.Component<Props> {
+export default class ActionGroup extends React.Component<Props> {
   static defaultProps = {
     title: null,
     message: null,
@@ -109,8 +108,6 @@ class ActionGroup extends React.Component<Props> {
       icons,
       destructiveButtonIndex,
       destructiveColor = DESTRUCTIVE_COLOR,
-      // @ts-ignore
-      generateTestHook,
       onSelect,
       startIndex,
       length,
@@ -134,7 +131,6 @@ class ActionGroup extends React.Component<Props> {
 
       optionViews.push(
         <TouchableNativeFeedbackSafe
-          ref={generateTestHook(`ActionSheetItem.${i}`)}
           key={i}
           pressInDelay={0}
           background={nativeFeedbackBackground}
@@ -156,7 +152,7 @@ class ActionGroup extends React.Component<Props> {
   };
 }
 
-export default hook(ActionGroup);
+// export default hook(ActionGroup);
 
 const styles = StyleSheet.create({
   button: {
