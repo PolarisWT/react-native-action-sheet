@@ -134,9 +134,7 @@ class ActionGroup extends React.Component<Props> {
 
       optionViews.push(
         <TouchableNativeFeedbackSafe
-          ref={generateTestHook(`ActionSheetItem.${i}`, () =>
-            autoFocus && i === 0 ? focusViewOnRender : undefined
-          )}
+          ref={generateTestHook(`ActionSheetItem.${i}`)}
           key={i}
           pressInDelay={0}
           background={nativeFeedbackBackground}
