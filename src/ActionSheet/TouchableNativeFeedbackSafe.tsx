@@ -40,12 +40,12 @@ class TouchableNativeFeedbackSafe extends React.Component<Props> {
     const { generateTestHook } = this.props;
 
     if (TouchableComponent === TouchableNativeFeedback) {
+      console.log({ TouchableProps: this.props });
       return (
         <TouchableComponent
           {...this.props}
           style={{}}
-          ref={generateTestHook(`ActionSheetItem.${this.props.key}`)}
-        >
+          ref={generateTestHook(`ActionSheetItem.${this.props.key}`)}>
           <View style={this.props.style}>{this.props.children}</View>
         </TouchableComponent>
       );
